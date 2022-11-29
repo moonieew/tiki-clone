@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 function Orders() {
   const [orders, setOrders] = useState([]);
   const theme = useTheme();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(2);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const user = useSelector(state => state.auth.user)
@@ -22,21 +22,25 @@ function Orders() {
   useEffect(() => {
     const getData = async () => {
       let param = {
-        _page: page,
+        // _page: page,
         _limit: size,
-        idUser:user.id,
+        // idUser:user.id,
         _sort:'updatedAt',
-        _order:'desc'
+        _order:'desc',
+        idUser:user.id,
       };
       apiCart.getOrders(param)
         .then(response=>{
            setOrders(response.data.sort((a,b)=>a.createdAt - b.createdAt));
+           console.log("2",response.data)
           setTotalPage(Math.ceil(response.pagination._totalRows / size))
         })
         .catch(setOrders([]))
     };
     getData();
   }, [page,user]);
+
+  console.log("11",orders)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -161,6 +165,6 @@ function TabPanel(props) {
 }
 
 const getOrderByType = (orders, id) =>
-  orders.filter((item) => item.type.id === id);
+  orders.filter((item) => item?.type?.id === id);
 
 export default Orders;

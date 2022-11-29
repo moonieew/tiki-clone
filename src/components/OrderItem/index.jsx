@@ -22,7 +22,7 @@ function OrderItem(props) {
           {state?.display}
         </Typography>
       </Stack>
-      {order?.products.slice(0,2).map((item) => (
+      {order?.products?.slice(0,2).map((item) => (
         <Stack
           key={item.id}
           className="orderItem__product"
@@ -76,6 +76,6 @@ function OrderItem(props) {
   );
 }
 
-const getState = (state) => orderTabs.find((item) => item.id === state.id);
+const getState = (state) => orderTabs.find((item) => item.id === state?.id);
 
 export default OrderItem;

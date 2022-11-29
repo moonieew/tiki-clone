@@ -51,7 +51,7 @@ function OrderList() {
     useEffect(() => {
         const getData = async () => {
           let param = {
-            _page: page,
+            // _page: page,
             _limit: size,
             _sort: 'createdAt',
             _order :'desc',

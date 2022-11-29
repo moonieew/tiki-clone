@@ -4,7 +4,7 @@ import queryString from 'query-string';
 import { axiosClient, axiosInstance } from "./axiosClient";
 
 // create axiosProducts to test favorite product
-const baseURL='https://playerhostedapitest.herokuapp.com/api/'
+const baseURL='https://nhom18-tiki.herokuapp.com/api/'
 //const baseURL='http://localhost:5000/api'
 //const baseURL='https://nhom3-tiki.herokuapp.com/api'
 export const axiosProducts = axios.create({

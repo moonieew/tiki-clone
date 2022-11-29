@@ -1,7 +1,7 @@
 import axios from 'axios';
 import queryString from 'query-string';
 import jwt_decode from 'jwt-decode';
-// const baseURL='https://playerhostedapitest.herokuapp.com/api/'
+// const baseURL='https://nhom18-tiki.herokuapp.com/api/'
 //const baseURL='http://localhost:5000/api'
 const baseURL='https://nhom3-tiki.herokuapp.com/api'
 export const axiosClient = axios.create({

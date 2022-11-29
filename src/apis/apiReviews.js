@@ -2,7 +2,7 @@
 import axios from 'axios';
 import queryString from 'query-string';
 
-const baseURL='https://playerhostedapitest.herokuapp.com/api/'
+const baseURL='https://nhom18-tiki.herokuapp.com/api/'
 export const axiosProducts = axios.create({
     baseURL: baseURL,
     headers: {
